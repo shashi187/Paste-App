@@ -47,7 +47,7 @@ const Home = () => {
         />
         <button className='rounded-2xl p-3 mt-2' onClick={createPaste}>
           {
-            pasteId ? "update My paste" : "Create My Paste"
+            pasteId ? "update My Item" : "Create My Item"
           }
         </button>
       </div>

@@ -9,8 +9,8 @@ const NavBar = () => {
         Home
       </NavLink>
       <NavLink 
-      to="paste">
-        Pastes
+      to="Items">
+        Items
       </NavLink>
     </div>
   )

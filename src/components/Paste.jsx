@@ -27,7 +27,7 @@ import toast from 'react-hot-toast';
 // } from "react-share";
 
 import { GrView } from "react-icons/gr";
-import { IoShareSocial } from "react-icons/io5";
+import { LuMailQuestion } from "react-icons/lu";
 import { MdDeleteSweep } from "react-icons/md";
 import { MdContentCopy } from "react-icons/md";
 import { MdOutlineEdit } from "react-icons/md";
@@ -40,8 +40,6 @@ const Paste = () => {
   const filteredData = paste.filter((paste) => paste.title.toLowerCase().includes(searchTerm.toLowerCase()));
   function handleDelete(pasteId){
     dispatch(removeFromPastes(pasteId));
-  }
-  function handleShare(){
   }
   return (
     <div>
@@ -58,7 +56,7 @@ const Paste = () => {
           filteredData.map(
             (paste) => {
               return (
-                <div className='border'>
+                <div className='border' key={paste}>
                   <div>
                     {paste.title}
                   </div>
@@ -85,8 +83,10 @@ const Paste = () => {
                     }>
                       <MdContentCopy />
                     </button>
-                    <button onClick={handleShare}>
-                      <IoShareSocial />
+                    <button>
+                      <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=darkshashi187@gmail.com&su=Hello%20from%20Item%20App&body=Hi%20there%2C%0A%0AThis%20email%20is%20being%20composed%20in%20Gmail%20from%20a%20React%20button.%0A%0ABest%20regards%2C%0AYour%20App`} target="_blank" rel="noopener noreferrer">
+                        <LuMailQuestion />
+                      </a>
                     </button>
                   </div>
                   <div>
